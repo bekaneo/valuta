@@ -20,7 +20,7 @@ for index, table in enumerate(tables):
         writer = csv.writer(file)
         file.seek(0, os.SEEK_END)
         if file.tell():
-            writer.writerow([datetime.now().date()] + ['–––––––––––' for x in table_rows])
+            writer.writerow([str(datetime.now().time())[:5]] + ['–––––––' for x in table_rows])
         for row in table_rows:
             row_data = []
             if row.find_all("th"):
